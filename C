@@ -3,14 +3,14 @@ bool canConstruct(char* ransomNote, char* magazine) {
 
     // Count each letter in magazine
     for (int i = 0; magazine[i] != '\0'; i++) {
-        count[magazine[i] - 'a']++;
+        count[magazine[i] - 'a']++;   //This line counts how many times each letter appears in magazine.
     }
 
     // Check each letter in ransomNote
     for (int i = 0; ransomNote[i] != '\0'; i++) {
         // Decrease the count for the letter in ransomNote
         if (--count[ransomNote[i] - 'a'] < 0) {
-            // If any letter count goes below zero, we don't have enough letters
+            // If any letter count goes below zero, we don't have enough letters ,This line checks if there are enough occurrences of a particular letter in magazine to satisfy the requirement in ransomNote.
             return false;
         }
     }
