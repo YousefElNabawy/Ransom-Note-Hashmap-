@@ -1,0 +1,22 @@
+To solve this problem, we need to check if each letter in ransomNote can be found in magazine, and each letter in magazine can only be used once. This suggests we need to count the occurrences of each character in both strings and ensure that each character in ransomNote does not exceed the count in magazine.
+
+Approach
+  1. Use an array to count the frequency of each letter in magazine.
+  2. For each letter in ransomNote, check if the magazine has enough occurrences of that letter. If at any point, the letter count in magazine is insufficient, return false.
+  3. If we are able to satisfy all letters in ransomNote, return true.
+
+
+Explanation
+  1. Counting: We count each character in magazine by incrementing the respective index in the count array.
+  2. Validation: For each character in ransomNote, we decrement the count in the array. If at any point the count for a character goes below zero, it indicates that magazine doesn’t have enough of that character to     satisfy ransomNote.
+  3. Result: If we process all characters in ransomNote without issues, we return true.
+
+
+Complexity Analysis
+
+  Time Complexity: 
+    𝑂(𝑚+𝑛), where 𝑚 is the length of magazine and 𝑛 is the length of ransomNote. We make a single pass over both strings.
+
+
+  Space Complexity: 
+    𝑂(1), as the count array is fixed at size 26 (for lowercase English letters).
