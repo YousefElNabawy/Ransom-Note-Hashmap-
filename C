@@ -1,3 +1,10 @@
+Explanation
+  1. Counting: We count each character in magazine by incrementing the respective index in the count array.
+  2. Validation: For each character in ransomNote, we decrement the count in the array. If at any point the count for a character goes below zero, it indicates that magazine doesn’t have enough of that character to     satisfy ransomNote.
+  3. Result: If we process all characters in ransomNote without issues, we return true.
+
+
+
 bool canConstruct(char* ransomNote, char* magazine) {
     int count[26] = {0}; // Array to hold counts of each letter in magazine
 
